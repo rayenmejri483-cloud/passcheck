@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<title>PassCheck</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body{
+  font-family: Arial;
+  background:#111;
+  color:#fff;
+  text-align:center;
+  padding:20px;
+}
+input,button{
+  width:90%;
+  padding:10px;
+  margin:10px 0;
+  font-size:16px;
+}
+button{
+  background:red;
+  color:white;
+  border:none;
+}
+</style>
+</head>
+<body>
+
+<h2>🔐 فحص كلمة المرور</h2>
+
+<input type="password" id="pass" placeholder="أدخل كلمة المرور">
+<button onclick="check()">فحص</button>
+
+<p id="result"></p>
+
+<script>
+function check(){
+  let p = document.getElementById("pass").value;
+  let r = document.getElementById("result");
+  if(p.length < 8){
+    r.innerText = "❌ ضعيفة";
+    r.style.color="red";
+  }else{
+    r.innerText = "✅ قوية";
+    r.style.color="lime";
+  }
+}
+</script>
+
+</body>
+</html>
